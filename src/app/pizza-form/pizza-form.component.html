@@ -1,0 +1,21 @@
+<h3>Add a Pizza</h3>
+
+<form (ngSubmit)="addDatPizza()">
+  <label for="pizza-name-input"> Name</label>
+  <input id="pizza-name-input" type="text" placeholder="3 cheese pizza"
+        [(ngModel)]="theNewPizza.name" name="name">
+        <p class='error' *ngIf='pizzaErrors.name'>{{pizzaErrors.name}}</p>
+        <br>
+  <label for="pizza-price-input">Price:</label>
+  <input type="number" id="pizza-price-input" step="0.10" placeholder="19.00"
+        [(ngModel)]="theNewPizza.price" name="price">
+        <p class='error' *ngIf='pizzaErrors.price'>{{pizzaErrors.price}}</p>
+        <br>
+  <label for="pizza-calories-input">Calories:</label>
+  <input type="number" id="pizza-calories-input" placeholder="1000"
+        [(ngModel)]="theNewPizza.calories" name="calories">
+        <p class='error' *ngIf='pizzaErrors.calories'>{{pizzaErrors.calories}}</p>
+        <br>
+  <button> Submit </button>
+
+</form>
